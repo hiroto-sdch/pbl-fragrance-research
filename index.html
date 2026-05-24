@@ -154,6 +154,43 @@
       margin-top: 0.4rem;
     }
 
+    /* Toggle (details/summary) */
+    .url-toggle {
+      margin-top: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .url-toggle summary {
+      cursor: pointer;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--accent);
+      padding: 5px 10px;
+      background: var(--accent-light);
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .url-toggle summary::-webkit-details-marker { display: none; }
+    .url-toggle summary::before { content: "▶"; font-size: 0.6rem; transition: transform 0.15s; }
+    .url-toggle[open] summary::before { content: "▼"; }
+    .url-toggle-body {
+      padding: 0.7rem 0.9rem;
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+    .article-item { margin-bottom: 0.9rem; }
+    .article-item:last-child { margin-bottom: 0; }
+    .article-title { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .article-title a { color: var(--a-color); text-decoration: none; }
+    .article-title a:hover { text-decoration: underline; }
+    .article-bullets { padding-left: 1.2rem; font-size: 0.78rem; color: var(--text); }
+    .article-bullets li { margin: 0.2rem 0; line-height: 1.55; }
+    .toggle-note { font-size: 0.75rem; color: var(--subtext); margin-top: 0.5rem; }
+
     /* Value chain diagram */
     .vc-section {
       background: white;
@@ -541,11 +578,25 @@
     <div class="url-list">
       <div class="url-item">
         <a href="https://www.iff.com/insights/" target="_blank">Consumer Insights ページ</a>
-        <span class="url-desc">IFFのヒューマン・消費者インサイト機能の概要ページ。「消費者中心のインサイト能力で顧客の課題を解決」という方針を説明するランディングページ。具体的な地域データは各記事へのリンクから参照する形式。</span>
+        <span class="url-desc">IFFのヒューマン・消費者インサイト機能の概要ページ。「消費者中心のインサイト能力で顧客の課題を解決」という方針を説明するランディングページ。具体的な地域データは個別記事に収録されている。</span>
+        <details class="url-toggle">
+          <summary>📰 個別記事一覧</summary>
+          <div class="url-toggle-body">
+            <div class="article-item">
+              <div class="article-title"><a href="https://www.iff.com/media/news/iff-unveils-china-scent-exploration-program-to-drive-next-generation-fragrance/" target="_blank">China Scent Exploration Program（2025年1月）</a></div>
+              <ul class="article-bullets">
+                <li>対象市場規模（2023年）：Fine fragrance $2.15B ／ 美容・パーソナルケア $77.35B ／ ホームケア $18B</li>
+                <li>4つの戦略柱：①歴史・文化的分析、②感覚・植物成分研究、③10,000人消費者サーベイ（Gen X〜Z・複数都市・Tier-1から新興市場まで）、④AI活用</li>
+                <li>AIと文化的インサイトを初めて組み合わせ、中国市場固有のフレグランス開発ガイドラインを生成</li>
+                <li>上海CreativeCenter（16,000㎡・IFFアジア最大拠点）と連携。IFFは1981年に中国進出した最初の多国籍香料会社</li>
+              </ul>
+            </div>
+          </div>
+        </details>
       </div>
       <div class="url-item">
         <a href="https://www.iff.com/media/news/iff-unveils-china-scent-exploration-program-to-drive-next-generation-fragrance/" target="_blank">China Scent Exploration Program</a>
-        <span class="url-desc">2025年1月発表のニュースリリース。中国市場の消費者理解を深め次世代フレグランス創出につなげるプログラムの概要。「中国固有の嗜好」の体系化に取り組む姿勢を示す資料。bot保護のためブラウザから直接アクセス推奨。</span>
+        <span class="url-desc">2025年1月発表のニュースリリース。中国市場の消費者理解を深め次世代フレグランス創出につなげるプログラムの概要。AIと文化的インサイトを組み合わせた初の取り組みで、中国固有の香り嗜好を体系化する。</span>
       </div>
     </div>
     <div class="note">💡 中国市場向けプログラムは地域嗜好差の実例として引用しやすい。</div>
@@ -557,11 +608,32 @@
     <div class="url-list">
       <div class="url-item">
         <a href="https://www.symrise.com/scent-and-care/fragrance/" target="_blank">Fragrance ページ</a>
-        <span class="url-desc">Symriseのフレグランス事業ケイパビリティの紹介ページ。世界9都市のCreative Centerを持つグローバル体制を説明。地域別の具体的嗜好データは含まれず、個別記事へのナビゲーションページとして機能。</span>
+        <span class="url-desc">Symriseのフレグランス事業ケイパビリティの紹介ページ。世界9都市のCreative Centerを持つグローバル体制を説明。個別の地域インサイト記事へのナビゲーションページとして機能。</span>
+        <details class="url-toggle">
+          <summary>📰 個別記事一覧</summary>
+          <div class="url-toggle-body">
+            <div class="article-item">
+              <div class="article-title"><a href="https://www.symrise.com/newsroom/article/the-future-generations-scents-sensibilities-symrise-explores-the-lifestyles-and-fragrance-prefe/" target="_blank">#GENYZ — Future Generations: Scents &amp; Sensibilities</a></div>
+              <ul class="article-bullets">
+                <li>米国内4都市（NY・LA・Chicago・Houston）のGen Y（ミレニアル）とGen Z（Z世代）を対象にした香り嗜好調査</li>
+                <li>ライフスタイル・価値観・購買行動とフレグランス選好の関係を分析</li>
+                <li>国際的な地域差比較よりも米国内の世代差・都市差の把握に有用</li>
+              </ul>
+            </div>
+            <div class="article-item">
+              <div class="article-title">中国地域インサイト（Fragrance ページ内）</div>
+              <ul class="article-bullets">
+                <li>「中国北部は強くナチュラルな香りを好み、南部は繊細な香りを好む」という国内南北差を言及</li>
+                <li>特定URLではなく Fragrance ページ内のコンテンツとして記述されている</li>
+              </ul>
+            </div>
+            <p class="toggle-note">※ Symriseニュースルームはブラウザで要確認：<a href="https://www.symrise.com/newsroom/" target="_blank">symrise.com/newsroom/</a></p>
+          </div>
+        </details>
       </div>
       <div class="url-item">
-        <a href="https://www.symrise.com/newsroom/article/the-future-generations-scents-sensibilities-symrise-explores-the-lifestyles-and-fragrance-prefe/" target="_blank">Future Generations 調査</a>
-        <span class="url-desc">米国内4都市のGen Y/Z（#GENYZ）向け香り嗜好調査レポート。アメリカ国内の若年層に限定したデータのため、国際的な地域差比較への直接活用は限定的。米国市場の若年層トレンドの把握として活用。</span>
+        <a href="https://www.symrise.com/newsroom/article/the-future-generations-scents-sensibilities-symrise-explores-the-lifestyles-and-fragrance-prefe/" target="_blank">Future Generations 調査（#GENYZ）</a>
+        <span class="url-desc">米国内4都市のGen Y・Gen Z向け香り嗜好調査レポート。アメリカ国内の若年層に限定したデータのため、国際的な地域差比較への直接活用は限定的。米国市場の若年層トレンドの把握として活用。</span>
       </div>
     </div>
     <div class="note">💡 一国内の南北差まで言及している点がユニーク。</div>
