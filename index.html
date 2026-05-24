@@ -368,6 +368,77 @@
     .summary ol { padding-left: 1.3rem; font-size: 0.9rem; }
     .summary ol li { margin: 0.4rem 0; }
 
+    /* Report plan section */
+    .report-section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin-top: 2rem;
+    }
+    .report-section h2 { font-size: 1rem; color: var(--accent); margin-bottom: 0.3rem; }
+    .report-section .section-note { font-size: 0.82rem; color: var(--subtext); margin-bottom: 1.2rem; }
+    .report-plan {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .report-plan:last-child { margin-bottom: 0; }
+    .report-plan-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      padding: 0.75rem 1rem;
+      background: var(--gray);
+    }
+    .report-plan-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: white;
+      white-space: nowrap;
+    }
+    .report-plan-type.lit { background: #0288d1; }
+    .report-plan-type.case { background: #e65100; }
+    .report-plan-type.fw { background: #558b2f; }
+    .report-plan-title { font-size: 0.92rem; font-weight: 700; }
+    .report-plan-body {
+      padding: 0.75rem 1rem;
+    }
+    .report-plan-body p { font-size: 0.84rem; color: var(--subtext); margin-bottom: 0.5rem; }
+    .report-plan-body ul { padding-left: 1.2rem; font-size: 0.82rem; }
+    .report-plan-body li { margin: 0.25rem 0; color: var(--text); }
+    .report-sources {
+      font-size: 0.78rem;
+      color: var(--subtext);
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .src-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-right: 3px;
+    }
+    .src-a { background: #e3f2fd; color: var(--a-color); }
+    .src-b { background: #e8f5e9; color: var(--b-color); }
+    .src-c { background: #f3e5f5; color: var(--c-color); }
+    .caveats {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--subtext);
+    }
+    .caveats strong { color: var(--text); }
+
     footer {
       text-align: center;
       font-size: 0.78rem;
@@ -801,18 +872,35 @@
 
   <div class="company-card">
     <h3>L'Oréal</h3>
-    <div class="finding">中国ローカルブランド（To Summer等）への投資を通じて地域の香りプロフィールと文化的文脈に対応。欧州=地中海系、日本・中国=繊細なウッディ・シトラス系、南アジア=スパイシー系という地域差が報告。</div>
+    <div class="finding">2024年度Luxe部門を直接確認。フレグランス売上+14%成長。地域別売上構造（北米が初の1位・北東アジアは軟調）は把握できるが、香り嗜好の地域差への直接言及はなかった。</div>
     <div class="url-list">
       <div class="url-item">
         <a href="https://www.loreal-finance.com/en/annual-report-2024/luxe/" target="_blank">Annual Report 2024｜Luxe</a>
-        <span class="url-desc">L'Oréalラグジュアリー部門（Lancôme、Yves Saint Laurent 等）の2024年業績ページ。フレグランスブランドの地域別パフォーマンスと市場戦略を記載。JSレンダリングのためコンテンツ全量はブラウザから直接確認推奨。</span>
+        <span class="url-desc">L'Oréal Luxe部門の2024年業績ページ。地域別売上パフォーマンスとフレグランス成長の記述あり。香り嗜好差の直接記述はなく、売上ベースの地域差把握として活用。</span>
+        <details class="url-toggle">
+          <summary>📰 記事の主要データ</summary>
+          <div class="url-toggle-body">
+            <div class="article-item">
+              <ul class="article-bullets">
+                <li>フレグランス売上：<strong>+14%成長</strong>（女性・男性セグメントともグローバルで好調）</li>
+                <li>部門全体：Like-for-like +2.7%、Reported +4.5%。世界ラグジュアリービューティ14期連続でアウトパフォーム</li>
+                <li>北米：初めてラグジュアリービューティNO.1を獲得。部門の最大成長貢献地域</li>
+                <li>北東アジア以外：二桁成長。欧州・新興市場も好調</li>
+                <li>北東アジア（中国・日本）：市場環境が引き続き厳しく軟調。ただしPrada・Valentino新規展開とAēsop・Takami買収で市場平均を上回る成長</li>
+                <li>中国でのYSL：メイクでNO.1、フレグランスでNo.5（ラグジュアリーセグメント）</li>
+                <li>Aēsop：2024年に42店舗開設（うち13店舗が中国）</li>
+              </ul>
+              <p class="toggle-note">⚠️ 地域別の「香り嗜好差」の記述なし。売上実績ベースの地域差把握として活用。</p>
+            </div>
+          </div>
+        </details>
       </div>
       <div class="url-item">
         <a href="https://www.scento.com/blog/global-fragrance-map-regional-styles" target="_blank">Global Fragrance Map（scento.com）</a>
         <span class="url-desc">欧州向け香水サブスクサービス Scento によるブログ記事。地域別の主要フレグランススタイルをマップ形式でまとめた概観資料。地域嗜好差の全体像把握に適しているが、B2C向けのまとめ記事のため学術・一次資料としての引用には注意。</span>
       </div>
     </div>
-    <div class="note">💡 「グローバルvs.ローカル」の対比として引用価値が高い。</div>
+    <div class="note">💡 地域別売上データは明確。ただし「なぜその地域で売れるか（香り嗜好の理由）」は案AのGivaudan・Henkelで補完する必要あり。</div>
   </div>
 
   <div class="company-card">
@@ -867,6 +955,70 @@
       <li><strong>案B（FMCG）</strong>はHenkelが案A並みに詳細。P&G・花王は公式一次資料が薄く二次情報頼み。Unileverは補完的に使える。</li>
       <li><strong>案C（ビューティー）</strong>はマクロな売上データ中心。「香りそのもの」ではなく「市場パフォーマンスの地域差」に留まりがち。資生堂の戦略ケースは定性的に価値あり。</li>
     </ol>
+  </div>
+
+  <!-- Report Plan -->
+  <div class="report-section">
+    <h2>📝 このpre-researchから作れるレポート案</h2>
+    <p class="section-note">確実にできるラインのみ記載。独自の国際消費者調査・一次データ収集は含まない。</p>
+
+    <div class="report-plan">
+      <div class="report-plan-header">
+        <span class="report-plan-type lit">文献調査型</span>
+        <span class="report-plan-title">香り製品の地域別嗜好差：香料原料メーカーの公開資料から読む構造</span>
+      </div>
+      <div class="report-plan-body">
+        <p>Givaudan・Henkel・DSM-Firmenichが公式に公開している消費者調査データを横断的に整理し、「どの地域でどんな香りが好まれるか」の事実を文献ベースで示すレポート。</p>
+        <ul>
+          <li>中国・メキシコ・欧州・米国・中東の5地域を比較軸に</li>
+          <li>Givaudan：フローラル/シトラス（中国）vs パイン/ラベンダー（メキシコ）の直接比較</li>
+          <li>Henkel：南欧/米国/アジアの3極、および国内地域差（仏vs独のラベンダー認識）</li>
+          <li>DSM-Firmenich：21か国定量調査から「香りへの意識の高さ」地域差を補足</li>
+          <li>差異の背景として文化・ライフスタイル・気候の要因を文献で考察</li>
+        </ul>
+        <div class="report-sources">主な出典：<span class="src-a">案A</span>Givaudan公式 ／ <span class="src-b">案B</span>Henkel公式記事・論文 ／ <span class="src-a">案A</span>DSM-Firmenich Barometer</div>
+      </div>
+    </div>
+
+    <div class="report-plan">
+      <div class="report-plan-header">
+        <span class="report-plan-type case">ケーススタディ型</span>
+        <span class="report-plan-title">「香りは付加価値か、主役か」―FMCG vs フレグランスブランドの地域適応戦略比較</span>
+      </div>
+      <div class="report-plan-body">
+        <p>バリューチェーン上の位置づけ（案B vs 案C）が異なると、地域適応の深度と手法がどう変わるかをケース比較するレポート。</p>
+        <ul>
+          <li>Henkel（案B）：機能的な香りを製品ごとに地域最適化。コスト制約の中で嗜好差に対応</li>
+          <li>資生堂（案C）：フランス子会社にR&Dを委譲し、"インサイダー"戦略でフレグランス市場に参入</li>
+          <li>2社の戦略の違いを「グローカル化のアプローチ」として対比</li>
+          <li>Henkelのグローカル論文（Academia.edu）と資生堂のケース教材が主な一次資料</li>
+        </ul>
+        <div class="report-sources">主な出典：<span class="src-b">案B</span>Henkel Glocalization論文 ／ <span class="src-c">案C</span>資生堂Annual Report・ケース教材</div>
+      </div>
+    </div>
+
+    <div class="report-plan">
+      <div class="report-plan-header">
+        <span class="report-plan-type fw">概念整理型</span>
+        <span class="report-plan-title">なぜ地域で香り嗜好が変わるのか：要因の類型化と企業の対応パターン</span>
+      </div>
+      <div class="report-plan-body">
+        <p>企業データと先行研究を組み合わせ、「地域差を生む要因」を整理するフレームワーク型レポート。ポスター発表向きの構成。</p>
+        <ul>
+          <li>要因の類型（例：文化的価値観・気候・流通チャネル・価格帯・世代差）を先行研究から整理</li>
+          <li>Cho 2024（嗅覚の文化差・ソーシャルロボット研究）を理論的背景として補足</li>
+          <li>各要因に対して企業データ（Givaudan・Henkel）の事例を対応させて具体化</li>
+          <li>「メリット（地域最適化による売上向上）とリスク（コスト増・ブランド一貫性の棄損）」の検討</li>
+        </ul>
+        <div class="report-sources">主な出典：<span class="src-a">案A</span>Givaudan・DSM-Firmenich ／ <span class="src-b">案B</span>Henkel ／ 先行研究（Cho 2024）</div>
+      </div>
+    </div>
+
+    <div class="caveats">
+      <strong>できないこと（スコープ外）：</strong>独自の国際消費者アンケート・複数国でのフィールド調査・企業へのインタビュー。
+      ポスター発表という成果物形式を踏まえると、上記3案のうち<strong>「文献調査型」か「概念整理型」</strong>が現実的。
+      ケーススタディ型は分析の深度を上げやすいが、Henkel・資生堂以外の追加資料収集が必要になる可能性あり。
+    </div>
   </div>
 
 </main>
