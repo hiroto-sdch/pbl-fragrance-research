@@ -154,6 +154,172 @@
       margin-top: 0.4rem;
     }
 
+    /* Value chain diagram */
+    .vc-section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.5rem 0;
+    }
+    .vc-section h2 { font-size: 1rem; color: var(--accent); margin-bottom: 1.2rem; }
+    .vc-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+    /* upstream / downstream labels */
+    .vc-axis {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+      padding: 0 0.2rem;
+    }
+
+    /* each row */
+    .vc-row { display: flex; width: 100%; gap: 0.7rem; align-items: stretch; }
+    .vc-row.bc { gap: 0.7rem; }
+
+    .vc-box {
+      flex: 1;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      border: 2px solid transparent;
+    }
+    .vc-box.raw {
+      background: #f5f5f5;
+      border-color: #bdbdbd;
+      text-align: center;
+    }
+    .vc-box.case-a {
+      background: #e3f2fd;
+      border-color: var(--a-color);
+    }
+    .vc-box.case-b {
+      background: #e8f5e9;
+      border-color: var(--b-color);
+    }
+    .vc-box.case-c {
+      background: #f3e5f5;
+      border-color: var(--c-color);
+    }
+    .vc-box.consumer {
+      background: #fff8e1;
+      border-color: #f9a825;
+      text-align: center;
+    }
+
+    .vc-box-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+    .vc-box.case-a .vc-box-label { color: var(--a-color); }
+    .vc-box.case-b .vc-box-label { color: var(--b-color); }
+    .vc-box.case-c .vc-box-label { color: var(--c-color); }
+    .vc-box.raw .vc-box-label, .vc-box.consumer .vc-box-label { color: var(--subtext); }
+
+    .vc-box-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .vc-box-companies {
+      font-size: 0.72rem;
+      color: var(--subtext);
+      margin-bottom: 0.5rem;
+    }
+    .vc-box-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .vc-tag {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.07);
+      color: var(--text);
+    }
+    .vc-tag.key {
+      font-weight: 700;
+    }
+    .vc-tag.a { background: rgba(26,115,232,0.12); color: var(--a-color); }
+    .vc-tag.b { background: rgba(46,125,50,0.12); color: var(--b-color); }
+    .vc-tag.c { background: rgba(106,27,154,0.12); color: var(--c-color); }
+
+    /* Arrow between rows */
+    .vc-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0;
+      width: 100%;
+    }
+    .vc-arrow-line {
+      flex: 1;
+      height: 2px;
+      background: #e0e0e0;
+    }
+    .vc-arrow-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .vc-arrow-icon { font-size: 1.1rem; color: #9e9e9e; line-height: 1; }
+    .vc-arrow-label {
+      font-size: 0.68rem;
+      color: var(--subtext);
+      white-space: nowrap;
+    }
+
+    /* Split arrow (A → B and A → C) */
+    .vc-split-arrow {
+      display: flex;
+      width: 100%;
+      position: relative;
+      padding: 0.3rem 0;
+      align-items: center;
+    }
+    .vc-split-left, .vc-split-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .vc-split-icon { font-size: 1.1rem; color: #9e9e9e; }
+    .vc-split-label { font-size: 0.68rem; color: var(--subtext); }
+
+    /* Difference table */
+    .vc-diff {
+      width: 100%;
+      margin-top: 1.2rem;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    .vc-diff th {
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      text-align: left;
+      color: var(--subtext);
+    }
+    .vc-diff td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .vc-diff tr:last-child td { border-bottom: none; }
+    .vc-diff .th-a { color: var(--a-color); }
+    .vc-diff .th-b { color: var(--b-color); }
+    .vc-diff .th-c { color: var(--c-color); }
+    .vc-diff .row-head {
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--subtext);
+      white-space: nowrap;
+    }
+
     /* Summary */
     .summary {
       background: var(--accent-light);
@@ -204,6 +370,148 @@
       <p>資生堂・L'Oréal・LVMH等が海外展開時に香りや戦略をどう変えているかを調査</p>
     </div>
   </div>
+
+  <!-- Value Chain Diagram -->
+  <div class="vc-section">
+    <h2>🔗 バリューチェーンと案A〜Cの位置づけ</h2>
+    <div class="vc-wrap">
+
+      <div class="vc-axis">
+        <span>↑ 上流（原材料側）</span>
+        <span>下流（消費者側）↓</span>
+      </div>
+
+      <!-- Row 0: Raw materials -->
+      <div class="vc-row">
+        <div class="vc-box raw">
+          <div class="vc-box-label">原材料層</div>
+          <div class="vc-box-title">天然素材・合成化学品</div>
+          <div class="vc-box-companies">植物抽出物・精油・合成香料素材</div>
+        </div>
+      </div>
+
+      <!-- Arrow: raw → A -->
+      <div class="vc-arrow">
+        <div class="vc-arrow-line"></div>
+        <div class="vc-arrow-center">
+          <span class="vc-arrow-icon">▼</span>
+          <span class="vc-arrow-label">原料調達</span>
+        </div>
+        <div class="vc-arrow-line"></div>
+      </div>
+
+      <!-- Row A -->
+      <div class="vc-row">
+        <div class="vc-box case-a">
+          <div class="vc-box-label">案 A</div>
+          <div class="vc-box-title">香料原料メーカー</div>
+          <div class="vc-box-companies">Givaudan / IFF / Symrise / DSM-Firmenich / 高砂 / 長谷川</div>
+          <div class="vc-box-tags">
+            <span class="vc-tag a key">業界横断データ保有</span>
+            <span class="vc-tag a">B2B供給</span>
+            <span class="vc-tag a">香料成分の設計</span>
+            <span class="vc-tag a">嗜好調査を自社実施</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Split arrow: A → B and C -->
+      <div class="vc-split-arrow">
+        <div class="vc-split-left">
+          <span class="vc-split-icon">▼</span>
+          <span class="vc-split-label">香料成分を供給</span>
+        </div>
+        <div class="vc-split-right">
+          <span class="vc-split-icon">▼</span>
+          <span class="vc-split-label">香料成分を供給</span>
+        </div>
+      </div>
+
+      <!-- Row B + C side by side -->
+      <div class="vc-row bc">
+        <div class="vc-box case-b">
+          <div class="vc-box-label">案 B</div>
+          <div class="vc-box-title">FMCG・日用品メーカー</div>
+          <div class="vc-box-companies">P&amp;G / Unilever / Henkel / 花王</div>
+          <div class="vc-box-tags">
+            <span class="vc-tag b key">香りは機能的付加価値</span>
+            <span class="vc-tag b">大量生産・低単価</span>
+            <span class="vc-tag b">洗剤・柔軟剤</span>
+            <span class="vc-tag b">地域別香り調整で購買を左右</span>
+          </div>
+        </div>
+        <div class="vc-box case-c">
+          <div class="vc-box-label">案 C</div>
+          <div class="vc-box-title">フレグランス・ビューティー</div>
+          <div class="vc-box-companies">資生堂 / L'Oréal / LVMH / Estée Lauder / KOSE</div>
+          <div class="vc-box-tags">
+            <span class="vc-tag c key">香りが製品の主役</span>
+            <span class="vc-tag c">少量生産・高単価</span>
+            <span class="vc-tag c">香水・化粧品</span>
+            <span class="vc-tag c">ブランド×文化の地域適応</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow: B/C → consumer -->
+      <div class="vc-arrow">
+        <div class="vc-arrow-line"></div>
+        <div class="vc-arrow-center">
+          <span class="vc-arrow-icon">▼</span>
+          <span class="vc-arrow-label">最終製品として販売</span>
+        </div>
+        <div class="vc-arrow-line"></div>
+      </div>
+
+      <!-- Row: Consumer -->
+      <div class="vc-row">
+        <div class="vc-box consumer">
+          <div class="vc-box-label">最終層</div>
+          <div class="vc-box-title">消費者（各国・各地域）</div>
+          <div class="vc-box-companies">文化・気候・ライフスタイルによって香り嗜好が異なる</div>
+        </div>
+      </div>
+
+    </div><!-- /.vc-wrap -->
+
+    <!-- Difference table -->
+    <table class="vc-diff">
+      <thead>
+        <tr>
+          <th class="row-head"></th>
+          <th class="th-a">案A｜香料原料メーカー</th>
+          <th class="th-b">案B｜日用品メーカー</th>
+          <th class="th-c">案C｜フレグランス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-head">香りの役割</td>
+          <td>原料・素材として設計・供給</td>
+          <td>製品の<strong>付加価値</strong>（清潔感・快適性）</td>
+          <td>製品の<strong>本質・主役</strong></td>
+        </tr>
+        <tr>
+          <td class="row-head">地域差の表れ方</td>
+          <td>調合する香料の配合比・選択が地域で変わる</td>
+          <td>同製品でも国ごとに香りの強度・系統が変わる</td>
+          <td>ブランドポジション・文化的文脈が市場ごとに変わる</td>
+        </tr>
+        <tr>
+          <td class="row-head">データの出どころ</td>
+          <td>複数業界横断の消費者調査（最も広い視野）</td>
+          <td>自社製品の市場テスト・地域別売上</td>
+          <td>アニュアルレポートの地域別業績が主</td>
+        </tr>
+        <tr>
+          <td class="row-head">一次資料の取りやすさ</td>
+          <td>★★★ 公式サイトに直接記述あり</td>
+          <td>★★☆ Henkelは豊富。他は薄い</td>
+          <td>★★☆ 売上データ中心。嗜好差の直接記述は少ない</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.vc-section -->
 
   <!-- Case A -->
   <div class="section-header">
