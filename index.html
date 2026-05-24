@@ -112,25 +112,6 @@
     }
     .star { color: #f9a825; font-size: 0.85rem; }
     .finding { font-size: 0.88rem; color: var(--text); margin: 0.6rem 0 0.8rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .links a {
-      font-size: 0.78rem;
-      color: white;
-      background: var(--accent);
-      padding: 3px 10px;
-      border-radius: 4px;
-      text-decoration: none;
-      word-break: break-all;
-    }
-    .links a:hover { opacity: 0.85; }
-    .note {
-      font-size: 0.8rem;
-      color: var(--subtext);
-      background: var(--gray);
-      border-radius: 6px;
-      padding: 6px 10px;
-      margin-top: 0.6rem;
-    }
     .highlight {
       background: #fff8e1;
       border-left: 3px solid #f9a825;
@@ -139,6 +120,38 @@
       font-size: 0.88rem;
       margin: 0.6rem 0 0.8rem;
       color: var(--text);
+    }
+
+    /* URL list with descriptions */
+    .url-list { margin: 0.6rem 0 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .url-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .url-item a {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: white;
+      background: var(--accent);
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      word-break: break-all;
+      align-self: flex-start;
+    }
+    .url-item a:hover { opacity: 0.85; }
+    .url-desc {
+      font-size: 0.8rem;
+      color: var(--subtext);
+      padding-left: 0.5rem;
+      border-left: 2px solid var(--border);
+      line-height: 1.55;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--subtext);
+      background: var(--gray);
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-top: 0.4rem;
     }
 
     /* Summary */
@@ -201,9 +214,15 @@
   <div class="company-card">
     <h3>Givaudan <span class="star">⭐ 即戦力</span></h3>
     <div class="highlight">「中国ではフローラル・シトラス系の清潔感が重視。メキシコではパイン・ラベンダー・マリン系のパンチある香りが定番」と公式コンテンツに明記。</div>
-    <div class="links">
-      <a href="https://www.givaudan.com/fragrance-beauty/consumer-products/home-care" target="_blank">Home Care ページ</a>
-      <a href="https://www.givaudan.com/fragrance-beauty/making-scents-changing-world" target="_blank">Making Scents of a Changing World</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.givaudan.com/fragrance-beauty/consumer-products/home-care" target="_blank">Home Care ページ</a>
+        <span class="url-desc">中国・メキシコ・インドなど主要市場のホームケア向け香り嗜好を具体的に記述。「中国は太陽光乾燥の清潔感、メキシコは柔軟剤の香料配合量が他国の3倍」という定量的比較も含む一次資料。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.givaudan.com/fragrance-beauty/making-scents-changing-world" target="_blank">Making Scents of a Changing World</a>
+        <span class="url-desc">ブラジル・中国・メキシコの国別プロファイルを詳述。香り嗜好と販売チャネル（メキシコ=ドアtoドア訪問販売、中国=EC急成長）の関係も記述。消費者行動との連動が最も詳しい公式コンテンツ。</span>
+      </div>
     </div>
     <div class="note">💡 中国vsメキシコの比較事例が公式に記載。一次資料として直接引用可能。</div>
   </div>
@@ -211,19 +230,31 @@
   <div class="company-card">
     <h3>IFF（International Flavors &amp; Fragrances）</h3>
     <div class="finding">中国向け「China Scent Exploration Program」（1万人規模）を展開。地域横断トレンドプラットフォーム「PANOPTIC」も保有。</div>
-    <div class="links">
-      <a href="https://www.iff.com/insights/" target="_blank">Consumer Insights ページ</a>
-      <a href="https://www.iff.com/media/news/iff-unveils-china-scent-exploration-program-to-drive-next-generation-fragrance/" target="_blank">China Scent Exploration Program</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.iff.com/insights/" target="_blank">Consumer Insights ページ</a>
+        <span class="url-desc">IFFのヒューマン・消費者インサイト機能の概要ページ。「消費者中心のインサイト能力で顧客の課題を解決」という方針を説明するランディングページ。具体的な地域データは各記事へのリンクから参照する形式。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.iff.com/media/news/iff-unveils-china-scent-exploration-program-to-drive-next-generation-fragrance/" target="_blank">China Scent Exploration Program</a>
+        <span class="url-desc">2025年1月発表のニュースリリース。中国市場の消費者理解を深め次世代フレグランス創出につなげるプログラムの概要。「中国固有の嗜好」の体系化に取り組む姿勢を示す資料。bot保護のためブラウザから直接アクセス推奨。</span>
+      </div>
     </div>
-    <div class="note">💡 中国市場向けプログラムは地域嗜好差の実例として引用しやすい。※リンクはbot保護のためブラウザから直接アクセス推奨。</div>
+    <div class="note">💡 中国市場向けプログラムは地域嗜好差の実例として引用しやすい。</div>
   </div>
 
   <div class="company-card">
     <h3>Symrise</h3>
     <div class="finding">中国内でも「北部は強くナチュラルな香りを好み、南部は繊細な香りを好む」という国内地域差を公式に言及。Gen Z向け「#GENYZ」調査も実施（4都市）。</div>
-    <div class="links">
-      <a href="https://www.symrise.com/scent-and-care/fragrance/" target="_blank">Fragrance ページ</a>
-      <a href="https://www.symrise.com/newsroom/article/the-future-generations-scents-sensibilities-symrise-explores-the-lifestyles-and-fragrance-prefe/" target="_blank">Future Generations 調査</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.symrise.com/scent-and-care/fragrance/" target="_blank">Fragrance ページ</a>
+        <span class="url-desc">Symriseのフレグランス事業ケイパビリティの紹介ページ。世界9都市のCreative Centerを持つグローバル体制を説明。地域別の具体的嗜好データは含まれず、個別記事へのナビゲーションページとして機能。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.symrise.com/newsroom/article/the-future-generations-scents-sensibilities-symrise-explores-the-lifestyles-and-fragrance-prefe/" target="_blank">Future Generations 調査</a>
+        <span class="url-desc">米国内4都市のGen Y/Z（#GENYZ）向け香り嗜好調査レポート。アメリカ国内の若年層に限定したデータのため、国際的な地域差比較への直接活用は限定的。米国市場の若年層トレンドの把握として活用。</span>
+      </div>
     </div>
     <div class="note">💡 一国内の南北差まで言及している点がユニーク。</div>
   </div>
@@ -231,9 +262,15 @@
   <div class="company-card">
     <h3>DSM-Firmenich <span class="star">⭐ 定量データあり</span></h3>
     <div class="finding">21か国・1.2万人規模の「NewNextNow Barometer」でフレグランスへの感情を定量化。地域別売上もアニュアルレポートに記載（中東・アジアが強く北米は軟調）。</div>
-    <div class="links">
-      <a href="https://annualreport.dsm-firmenich.com/2025/our-businesses/perfumery-beauty/our-markets.html" target="_blank">Annual Report 2025｜Our Markets</a>
-      <a href="https://our-company.dsm-firmenich.com/en/our-company/news/trade-news/2025/dsm-firmenich-unveils-emotion-social-connection.html" target="_blank">emotiOn ニュース</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://annualreport.dsm-firmenich.com/2025/our-businesses/perfumery-beauty/our-markets.html" target="_blank">Annual Report 2025｜Our Markets</a>
+        <span class="url-desc">香粧品・美容部門の地域別市場業績を記載。中東・アジア好調、北米・ラテンアメリカ軟調という地域差が定量的に確認できる。「21か国調査で香りをより重視する傾向が70%」という NewNextNow 調査への言及も含む。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://our-company.dsm-firmenich.com/en/our-company/news/trade-news/2025/dsm-firmenich-unveils-emotion-social-connection.html" target="_blank">emotiOn ニュース</a>
+        <span class="url-desc">NewNextNow Barometer（20か国・1万2000人規模）のプレスリリース。「Gen Zの52%が孤立感を感じ、61%が香りにより孤立感が軽減できると回答」という定量データを収録。地域別の感情・香り意識データとして引用価値が高い。</span>
+      </div>
     </div>
     <div class="note">💡 21か国調査の規模感は大きく、地域差の定量的根拠として価値が高い。</div>
   </div>
@@ -241,9 +278,15 @@
   <div class="company-card">
     <h3>Takasago（高砂香料工業）</h3>
     <div class="finding">25か国グローバルInsightsプラットフォームと毎年発行「TrendSeeds™」を保有。中国では「ミレニアルのKOL依存・自然回帰・新ナショナリズム」など地域トレンドを記述。</div>
-    <div class="links">
-      <a href="https://www.takasago.com/en/fragrances/insights" target="_blank">Fragrances Insights</a>
-      <a href="https://www.takasago.com/en/flavors/Insights/trends2025" target="_blank">TrendSeeds™ 2025</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.takasago.com/en/fragrances/insights" target="_blank">Fragrances Insights</a>
+        <span class="url-desc">タカサゴのフレグランス部門インサイトページ。グローバルInsightsプラットフォームへの入口として機能するリンクハブ。詳細なトレンドデータは各コンテンツページにリンク。日本発グローバル香料メーカーとして中国・アジア市場への解像度が高い。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.takasago.com/en/flavors/Insights/trends2025" target="_blank">TrendSeeds™ 2025</a>
+        <span class="url-desc">フレーバー（食品香料）部門の2025年トレンドレポート。食品向けが主軸のため、フレグランス（香水・日用品向け）の地域差研究への直接適用は限定的。補完的参照として位置づける。</span>
+      </div>
     </div>
     <div class="note">💡 日本企業。毎年更新される公開資料で時系列比較も可能。</div>
   </div>
@@ -251,10 +294,13 @@
   <div class="company-card">
     <h3>T.Hasegawa（長谷川香料）</h3>
     <div class="finding">毎年「Flavor Trends」レポートを発行し地域差を扱うが、フレーバー（食品香料）が主軸。フレグランス（日用品・香水）の地域差言及は限定的。</div>
-    <div class="links">
-      <a href="https://www.thasegawa.com/flavor-trends-2026/" target="_blank">Flavor Trends 2026</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.thasegawa.com/flavor-trends-2026/" target="_blank">Flavor Trends 2026</a>
+        <span class="url-desc">長谷川香料が発行する食品フレーバートレンドの年次レポート（アクセス制限あり・403のためブラウザ直接確認推奨）。食品香料の市場トレンドが中心で、フレグランス製品の地域差研究への直接的な有用性は限定的。補足的参照として活用。</span>
+      </div>
     </div>
-    <div class="note">⚠️ 案Aの中では最も情報が薄い。補足的位置づけ。参照記事はbot保護のためブラウザ直接アクセス推奨。</div>
+    <div class="note">⚠️ 案Aの中では最も情報が薄い。補足的位置づけ。</div>
   </div>
 
   <!-- Case B -->
@@ -266,9 +312,15 @@
   <div class="company-card">
     <h3>Henkel <span class="star">⭐ 即戦力</span></h3>
     <div class="highlight">「南欧=フローラル系、米国=フルーティー系、アジア=ライト系。フランスではラベンダーが人気だがドイツでは防虫剤を連想させるため敬遠」と公式記事に明記。</div>
-    <div class="links">
-      <a href="https://www.henkel.com/spotlight/2024-06-27-how-fragrances-shape-our-product-experience-1966464" target="_blank">Henkel Fragrance Center 公式記事（2024）</a>
-      <a href="https://www.academia.edu/18236320/Developing_a_glocalisation_strategy_experiences_from_Henkel_s_product_launches_in_the_Middle_East_and_Europe" target="_blank">グローカル戦略論文（Academia.edu）</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.henkel.com/spotlight/2024-06-27-how-fragrances-shape-our-product-experience-1966464" target="_blank">Henkel Fragrance Center 公式記事（2024）</a>
+        <span class="url-desc">「南欧=フローラル系、米国=フルーティー系、アジア=ライト系」という地域別香り嗜好の直接記述。フランス・ドイツで同じラベンダーへの連想が異なる事例（仏=リラックス効果、独=防虫剤を連想）も含む。案B最高品質の一次資料。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.academia.edu/18236320/Developing_a_glocalisation_strategy_experiences_from_Henkel_s_product_launches_in_the_Middle_East_and_Europe" target="_blank">グローカル戦略論文（Academia.edu）</a>
+        <span class="url-desc">Persil Abaya（中東向け）と Persil Black Gel（欧州向け）の事例研究（学術論文）。製造・購買での「規模の経済」を維持しながら、パッケージ・マーケティング・製品訴求を地域ごとに調整した Glocalization 戦略の分析。文化的多様性への対応根拠として引用可能。</span>
+      </div>
     </div>
     <div class="note">💡 案B最強候補。「グローバル統一vs.地域調整」の対比フレームも使いやすい。</div>
   </div>
@@ -276,9 +328,15 @@
   <div class="company-card">
     <h3>Unilever</h3>
     <div class="finding">Comfortブランドの公式記事で東南アジア・日本・韓国の嗜好差に言及。日本・韓国は低香・無香志向、東南アジアは地域パートナーと共同生産した地域特化品を展開。</div>
-    <div class="links">
-      <a href="https://www.unilever.com/news/news-search/2025/transforming-comfort-to-meet-the-evolving-needs-of-consumers/" target="_blank">Transforming Comfort（2025）</a>
-      <a href="https://www.unilever.com/news/news-search/2024/the-fabric-enhancer-market-is-changing-heres-how-were-responding/" target="_blank">Fabric Enhancer Market（2024）</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.unilever.com/news/news-search/2025/transforming-comfort-to-meet-the-evolving-needs-of-consumers/" target="_blank">Transforming Comfort（2025）</a>
+        <span class="url-desc">Comfortブランドの消費者ニーズ変化への対応を解説した公式記事。東南アジア・日本・韓国の嗜好差に言及。bot保護（403）のためブラウザから直接アクセス推奨。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.unilever.com/news/news-search/2024/the-fabric-enhancer-market-is-changing-heres-how-were-responding/" target="_blank">Fabric Enhancer Market（2024）</a>
+        <span class="url-desc">柔軟剤・ファブリックエンハンサー市場の変化とUnileverの対応を解説した公式記事。地域別製品戦略の記述が含まれる可能性あり。bot保護（403）のためブラウザから直接アクセス推奨。</span>
+      </div>
     </div>
     <div class="note">💡 公式一次資料。東南アジア・日本・韓国の三極比較が可能。</div>
   </div>
@@ -286,8 +344,11 @@
   <div class="company-card">
     <h3>P&amp;G（Procter &amp; Gamble）</h3>
     <div class="finding">Arielブランドでラテンアメリカ・アジア向けに地域固有の香りを採用との言及が複数のビジネス分析サイトに存在。ただし公式サイトからの直接記述は確認できず。</div>
-    <div class="links">
-      <a href="https://www.cascade.app/studies/procter-and-gamble-strategy-study" target="_blank">P&amp;G Strategy Study（cascade.app）</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.cascade.app/studies/procter-and-gamble-strategy-study" target="_blank">P&amp;G Strategy Study（cascade.app）</a>
+        <span class="url-desc">戦略管理SaaS「Cascade」による P&G 全社戦略の第三者解説ページ。P&Gの地域別製品展開の概要把握に適している。P&G公式資料ではなく二次情報のため、引用時は出所に注意。</span>
+      </div>
     </div>
     <div class="note">⚠️ 公式一次資料が薄い。二次情報として活用。</div>
   </div>
@@ -295,8 +356,11 @@
   <div class="company-card">
     <h3>Kao（花王）</h3>
     <div class="finding">Fragrance Policyページが存在し安全性方針を記載。化粧品の海外展開（中国・ASEAN・インド）は記事あり。ただし香りの地域別設計に関する直接記述は確認できず。</div>
-    <div class="links">
-      <a href="https://www.kao.com/global/en/innovation/safety-quality/fragrance-policy/" target="_blank">Kao Fragrance Policy</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.kao.com/global/en/innovation/safety-quality/fragrance-policy/" target="_blank">Kao Fragrance Policy</a>
+        <span class="url-desc">花王の香料使用に関する安全性・品質管理ポリシーを記載したページ。アレルゲン物質リストや成分管理基準が主内容。地域別の香り嗜好差に関する記述はなく、製品安全基準の参照として活用。</span>
+      </div>
     </div>
     <div class="note">⚠️ 香りの地域差という切り口では情報が薄い。IR資料の深掘りが必要。</div>
   </div>
@@ -310,9 +374,15 @@
   <div class="company-card">
     <h3>資生堂（Shiseido）</h3>
     <div class="finding">フレグランスのCenter of ExcellenceをEMAE（フランス・オルレアン近郊）に設置。フランス子会社に開発・R&Dを完全委譲した「アウトサイダーからインサイダーへ」戦略はケース教材にも採用。</div>
-    <div class="links">
-      <a href="https://corp.shiseido.com/report/en/2022/strategy/global/" target="_blank">Annual Report 2022｜Global Strategy</a>
-      <a href="http://internationalbusinessstrategy.org/case-3-2-shiseido-becoming-an-insider-in-the-perfume-business-in-france/" target="_blank">ケース教材｜Insider in France ※ブラウザ直接アクセス推奨</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://corp.shiseido.com/report/en/2022/strategy/global/" target="_blank">Annual Report 2022｜Global Strategy</a>
+        <span class="url-desc">2022年度の地域別売上データ（日本22.3%、中国24.2%、アジアパシフィック6.4%、米州12.9%、EMEA12.0%、トラベルリテール15.3%）と地域別CEOのプロフィールを掲載。香り嗜好の直接データではないが、ビジネス規模の地域差把握と地域別意思決定体制の確認に有用。</span>
+      </div>
+      <div class="url-item">
+        <a href="http://internationalbusinessstrategy.org/case-3-2-shiseido-becoming-an-insider-in-the-perfume-business-in-france/" target="_blank">ケース教材｜Insider in France ※ブラウザ直接アクセス推奨</a>
+        <span class="url-desc">資生堂がフランス子会社に香料R&Dを完全委譲し「アウトサイダーからインサイダーへ」転換した戦略のケース教材。地域固有の文化・嗜好に適応するための組織的アプローチを定性的に分析した良質な事例。</span>
+      </div>
     </div>
     <div class="note">💡 地域適応戦略のケーススタディとして完成度が高い。</div>
   </div>
@@ -320,9 +390,15 @@
   <div class="company-card">
     <h3>L'Oréal</h3>
     <div class="finding">中国ローカルブランド（To Summer等）への投資を通じて地域の香りプロフィールと文化的文脈に対応。欧州=地中海系、日本・中国=繊細なウッディ・シトラス系、南アジア=スパイシー系という地域差が報告。</div>
-    <div class="links">
-      <a href="https://www.loreal-finance.com/en/annual-report-2024/luxe/" target="_blank">Annual Report 2024｜Luxe</a>
-      <a href="https://www.scento.com/blog/global-fragrance-map-regional-styles" target="_blank">Global Fragrance Map（scento.com）</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.loreal-finance.com/en/annual-report-2024/luxe/" target="_blank">Annual Report 2024｜Luxe</a>
+        <span class="url-desc">L'Oréalラグジュアリー部門（Lancôme、Yves Saint Laurent 等）の2024年業績ページ。フレグランスブランドの地域別パフォーマンスと市場戦略を記載。JSレンダリングのためコンテンツ全量はブラウザから直接確認推奨。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.scento.com/blog/global-fragrance-map-regional-styles" target="_blank">Global Fragrance Map（scento.com）</a>
+        <span class="url-desc">欧州向け香水サブスクサービス Scento によるブログ記事。地域別の主要フレグランススタイルをマップ形式でまとめた概観資料。地域嗜好差の全体像把握に適しているが、B2C向けのまとめ記事のため学術・一次資料としての引用には注意。</span>
+      </div>
     </div>
     <div class="note">💡 「グローバルvs.ローカル」の対比として引用価値が高い。</div>
   </div>
@@ -330,9 +406,15 @@
   <div class="company-card">
     <h3>LVMH（Dior、Givenchy 等）</h3>
     <div class="finding">2024 Annual Reportに地域別フレグランス業績を記載。欧州・米国は堅調、日本は二桁成長。中東ではラグジュアリー志向の嗜好差が明確。</div>
-    <div class="links">
-      <a href="https://hosting.fluidbook.com/LVMH/2024interactiveannualreport/en/106-2024-Interactive-Annual-Report-LVMH.html" target="_blank">LVMH Annual Report 2024（インタラクティブ）</a>
-      <a href="https://www.lvmh.com/en/publications/lvmh-achieves-a-solid-performance-despite-an-unfavorable-global-economic-environment" target="_blank">LVMH 業績発表</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://hosting.fluidbook.com/LVMH/2024interactiveannualreport/en/106-2024-Interactive-Annual-Report-LVMH.html" target="_blank">LVMH Annual Report 2024（インタラクティブ）</a>
+        <span class="url-desc">LVMHの2024年インタラクティブ年次報告書（PDFビューア形式）。Perfumes & Cosmetics セグメントの地域別実績・ブランド別詳細データへのアクセス起点。Dior・Givenchy 等のフレグランスブランドの地域別売上が確認できる。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://www.lvmh.com/en/publications/lvmh-achieves-a-solid-performance-despite-an-unfavorable-global-economic-environment" target="_blank">LVMH 業績発表</a>
+        <span class="url-desc">「不利なグローバル経済環境下での堅調なパフォーマンス」を発表したプレスリリース。Perfumes & Cosmetics セグメントの地域別概況と、日本市場の特に高い成長率が含まれる。</span>
+      </div>
     </div>
     <div class="note">💡 一次資料として信頼性が高い。地域別売上比較の根拠として活用可能。</div>
   </div>
@@ -340,9 +422,15 @@
   <div class="company-card">
     <h3>Estée Lauder</h3>
     <div class="finding">日本フレグランス市場1位獲得（Le Labo・Jo Malone牽引）。中国ではLe Laboがリード。AIプラットフォームでアジア各市場のトレンドをリアルタイム追跡。</div>
-    <div class="links">
-      <a href="https://www.elcompanies.com/en/investors/earnings-and-financials/annual-reports" target="_blank">Annual Reports（公式）</a>
-      <a href="https://missionmedia.asia/how-estee-lauder-won-asia-5-risk-ready-moves-cmos-can-copy/" target="_blank">How Estée Lauder Won Asia</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.elcompanies.com/en/investors/earnings-and-financials/annual-reports" target="_blank">Annual Reports（公式）</a>
+        <span class="url-desc">The Estée Lauder Companies（ELC）の年次報告書一覧ページ。地域別事業戦略・ブランド別業績・市場トレンドへのアクセス起点。過去のアニュアルレポートから年次での地域別売上推移が確認できる。</span>
+      </div>
+      <div class="url-item">
+        <a href="https://missionmedia.asia/how-estee-lauder-won-asia-5-risk-ready-moves-cmos-can-copy/" target="_blank">How Estée Lauder Won Asia</a>
+        <span class="url-desc">2025年10月発表。アジア市場での5%売上減少をAI駆動の市場インテリジェンスとサプライチェーン多様化で回復した経緯を分析。Le Laboの日本フレグランス市場1位獲得・中国での成長という具体的事実を含む。CMO向けの戦略示唆5点も収録。</span>
+      </div>
     </div>
     <div class="note">💡 Le Laboの日本1位という具体的事実は「地域差が売上に直結」の裏付けに使える。</div>
   </div>
@@ -350,8 +438,11 @@
   <div class="company-card">
     <h3>コーセー（KOSE）</h3>
     <div class="finding">DECORTÉの欧米展開では地域ごとに訴求内容を変える戦略（米国=成分・開発ストーリー重視、中国=効果効能の羅列）。ただし香り固有の地域差は確認できず。</div>
-    <div class="links">
-      <a href="https://www.seventietwo.com/ja/business/DECORTELocalizationStrategyintheWesternMarket" target="_blank">DECORTÉのローカライゼーション戦略</a>
+    <div class="url-list">
+      <div class="url-item">
+        <a href="https://www.seventietwo.com/ja/business/DECORTELocalizationStrategyintheWesternMarket" target="_blank">DECORTÉのローカライゼーション戦略</a>
+        <span class="url-desc">2018年記事。DECORTÉブランドの欧米市場参入における商品訴求・パッケージ・コミュニケーション戦略のローカライゼーション事例。「米国=成分・開発ストーリー重視、中国=効果効能の羅列」という市場別差異を記述。フレグランス固有ではなく美容全般の地域適応事例。</span>
+      </div>
     </div>
     <div class="note">⚠️ マーケティング訴求の地域差が主。フレグランス固有のデータは限定的。</div>
   </div>
