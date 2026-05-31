@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PBL 13班 骨子案｜研究の方向性</title>
+  <style>
+    :root {
+      --accent: #5c6bc0;
+      --accent-light: #e8eaf6;
+      --a-color: #1a73e8;
+      --b-color: #2e7d32;
+      --c-color: #6a1b9a;
+      --gray: #f5f5f5;
+      --border: #e0e0e0;
+      --text: #212121;
+      --subtext: #616161;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: #fafafa;
+      line-height: 1.7;
+    }
+    header {
+      background: var(--accent);
+      color: white;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+    header p { font-size: 0.9rem; opacity: 0.85; }
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      border-radius: 4px;
+      padding: 2px 10px;
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+    }
+    .nav-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 4px;
+      padding: 3px 12px;
+    }
+    .nav-link:hover { background: rgba(255,255,255,0.15); }
+
+    main { max-width: 860px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+
+    /* Intro */
+    .intro {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      color: var(--subtext);
+    }
+    .intro strong { color: var(--text); }
+
+    /* Case tabs */
+    .case-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2rem 0 0;
+      flex-wrap: wrap;
+    }
+    .case-tab {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.9rem 1rem;
+      border-radius: 8px 8px 0 0;
+      border: 2px solid transparent;
+      border-bottom: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: default;
+      text-align: center;
+    }
+    .case-tab.a { background: #e3f2fd; border-color: var(--a-color); color: var(--a-color); }
+    .case-tab.b { background: #e8f5e9; border-color: var(--b-color); color: var(--b-color); }
+    .case-tab.c { background: #f3e5f5; border-color: var(--c-color); color: var(--c-color); }
+
+    /* Outline card */
+    .outline-card {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 0 10px 10px 10px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .outline-card.a { border-color: var(--a-color); }
+    .outline-card.b { border-color: var(--b-color); }
+    .outline-card.c { border-color: var(--c-color); }
+
+    /* Super summary */
+    .supersummary {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .supersummary-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--subtext);
+      margin-bottom: 0.4rem;
+    }
+    .supersummary p {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* Sections list */
+    .sections-wrap {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sections-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--subtext);
+      margin-bottom: 0.8rem;
+    }
+    .section-row {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      margin-bottom: 0.7rem;
+      font-size: 0.85rem;
+    }
+    .section-row:last-child { margin-bottom: 0; }
+    .section-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      margin-top: 2px;
+    }
+    .num-a { background: var(--a-color); }
+    .num-b { background: var(--b-color); }
+    .num-c { background: var(--c-color); }
+    .section-content {}
+    .section-title { font-weight: 700; margin-bottom: 0.15rem; }
+    .section-desc { font-size: 0.8rem; color: var(--subtext); line-height: 1.55; }
+
+    /* Strengths/notes */
+    .card-footer {
+      padding: 0.8rem 1.4rem;
+      background: var(--gray);
+      font-size: 0.8rem;
+      color: var(--subtext);
+    }
+    .card-footer strong { color: var(--text); }
+
+    /* Comparison table */
+    .compare-section {
+      margin-top: 2rem;
+    }
+    .compare-section h2 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .compare-table th {
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      text-align: left;
+      background: var(--gray);
+    }
+    .compare-table th.th-a { color: var(--a-color); }
+    .compare-table th.th-b { color: var(--b-color); }
+    .compare-table th.th-c { color: var(--c-color); }
+    .compare-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .row-head {
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--subtext);
+      white-space: nowrap;
+    }
+    .stars { color: #f9a825; letter-spacing: -1px; }
+
+    /* Recommendation box */
+    .recommendation {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 1.2rem 1.4rem;
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+    }
+    .recommendation h3 { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .recommendation p { color: var(--text); line-height: 1.75; }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--subtext);
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ポスター発表 骨子案</h1>
+  <p>グループPBL演習 13班｜案A / B / C それぞれの研究の方向性</p>
+  <span class="tag">作成日: 2026-05-31</span><br>
+  <a class="nav-link" href="index.html">← Pre-Research まとめに戻る</a>
+</header>
+
+<main>
+
+  <div class="intro">
+    テーマ：<strong>「同一の香り製品でも国によって売れ行きに差がある」</strong>という現象を対象に、消費者嗜好の地域差・その要因（文化・価値観・ライフスタイル）・メリットとリスクを分析する。<br>
+    以下3案は調査の切り口（誰の視点で分析するか）が異なる。現時点では方向性の比較用として整理したもの。
+  </div>
+
+  <!-- Case A -->
+  <div class="case-tabs">
+    <div class="case-tab a">案 A｜香料原料メーカー視点</div>
+  </div>
+  <div class="outline-card a">
+    <div class="supersummary">
+      <div class="supersummary-label">SUPER SUMMARY</div>
+      <p>香料原料メーカー（Givaudan・Henkel・DSM-Firmenich 等）は複数業界に香料を供給する立場から業界横断の消費者データを保有しており、「地域で香り嗜好が異なる」という事実の最も直接的な一次資料となる。本研究では各社の公開資料を横断的に読み解き、地域差の実態・要因・企業にとってのメリット／リスクを整理する。</p>
+    </div>
+    <div class="sections-wrap">
+      <div class="sections-label">POSTER SECTIONS</div>
+      <div class="section-row">
+        <span class="section-num num-a">1</span>
+        <div class="section-content">
+          <div class="section-title">背景・問い</div>
+          <div class="section-desc">同一の香り製品でも地域によって売れ行きが異なる現象の紹介。「なぜ差が生まれるのか」を問いとして設定。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-a">2</span>
+        <div class="section-content">
+          <div class="section-title">分析対象と方法</div>
+          <div class="section-desc">主要香料原料メーカー6社（Givaudan / IFF / Symrise / DSM-Firmenich / 高砂 / 長谷川）の公式資料・消費者調査レポートを文献レビュー。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-a">3</span>
+        <div class="section-content">
+          <div class="section-title">地域別嗜好差の事実整理</div>
+          <div class="section-desc">中国（フローラル・シトラス）/ メキシコ（パイン・ラベンダー・マリン）/ 南欧（フローラル）/ 米国（フルーティー）/ アジア（ライト）を比較。GivaudanとHenkelの具体的記述を根拠として提示。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-a">4</span>
+        <div class="section-content">
+          <div class="section-title">嗜好差をもたらす要因分析</div>
+          <div class="section-desc">文化的価値観・気候・ライフスタイル・流通チャネルの4軸で地域差の背景を類型化。DSM-Firmenichの21か国定量調査を補足根拠として使用。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-a">5</span>
+        <div class="section-content">
+          <div class="section-title">メリット</div>
+          <div class="section-desc">地域最適化した香りを採用することによる市場浸透率の向上・消費者ロイヤルティの強化。企業側の売上・競合優位への貢献。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-a">6</span>
+        <div class="section-content">
+          <div class="section-title">リスク</div>
+          <div class="section-desc">SKU増加・処方管理の複雑化によるコスト増。地域別データの陳腐化リスク。グローバルブランドの一貫性棄損の懸念。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-a">7</span>
+        <div class="section-content">
+          <div class="section-title">結論</div>
+          <div class="section-desc">地域別嗜好差は偶然ではなく文化・ライフスタイルに根ざした構造的なもの。企業はそれを「データとして把握・活用」する体制を整えている。</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer"><strong>強み：</strong>一次資料が最も豊富。定量データ（DSM-Firmenich）と定性事例（Givaudan・Henkel）の両方が揃い、文献調査として完結しやすい。</div>
+  </div>
+
+  <!-- Case B -->
+  <div class="case-tabs">
+    <div class="case-tab b">案 B｜FMCG・日用品メーカー視点</div>
+  </div>
+  <div class="outline-card b">
+    <div class="supersummary">
+      <div class="supersummary-label">SUPER SUMMARY</div>
+      <p>洗剤・柔軟剤など日用品における香りは「製品選択の最大の決め手」の一つであり、各社は同一ブランドを維持しながら地域ごとに香りの系統・強度を調整している。Henkelの「グローカル戦略」を軸に、「グローバルな規模の経済」と「地域嗜好への適応」をどう両立させるかを分析する。</p>
+    </div>
+    <div class="sections-wrap">
+      <div class="sections-label">POSTER SECTIONS</div>
+      <div class="section-row">
+        <span class="section-num num-b">1</span>
+        <div class="section-content">
+          <div class="section-title">背景・問い</div>
+          <div class="section-desc">日用品の香りはなぜ地域ごとに違うのか。同一ブランドでも地域別処方が存在する事実から問いを立てる。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-b">2</span>
+        <div class="section-content">
+          <div class="section-title">分析対象と方法</div>
+          <div class="section-desc">Henkel・Unilever・P&G・花王の公式資料・事例研究をレビュー。Henkelを主軸に、他社を補完的に参照。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-b">3</span>
+        <div class="section-content">
+          <div class="section-title">地域別嗜好差の事例</div>
+          <div class="section-desc">南欧（フローラル）・米国（フルーティー）・アジア（ライト）の3極比較。フランスとドイツで同じラベンダーへの連想が異なる事例（仏＝リラックス、独＝防虫剤）を具体的に提示。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-b">4</span>
+        <div class="section-content">
+          <div class="section-title">グローカル戦略の構造</div>
+          <div class="section-desc">製造・調達はグローバルで統一し、香りの処方・マーケティングは地域に調整するHenkelの二層構造を図示。Persil Abaya（中東）・Persil Black Gel（欧州）の事例で具体化。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-b">5</span>
+        <div class="section-content">
+          <div class="section-title">メリット</div>
+          <div class="section-desc">地域適応による市場シェア拡大（Henkelの中東・欧州展開の実績）。規模の経済を維持しつつ文化的多様性に対応できる点。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-b">6</span>
+        <div class="section-content">
+          <div class="section-title">リスク</div>
+          <div class="section-desc">SKU増加によるサプライチェーン複雑化・地域別処方管理コストの増大。誤った地域適応が消費者の反発を生むリスク。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-b">7</span>
+        <div class="section-content">
+          <div class="section-title">結論</div>
+          <div class="section-desc">日用品における香りの地域適応は「コストではなく投資」として機能する。グローカル化の巧拙が競合優位を左右する。</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer"><strong>強み：</strong>Henkelに具体的な比較データと学術論文が揃っており、ストーリーとして成立しやすい。「グローカル化」というフレームが考察に使いやすい。</div>
+  </div>
+
+  <!-- Case C -->
+  <div class="case-tabs">
+    <div class="case-tab c">案 C｜フレグランス・ビューティーブランド視点</div>
+  </div>
+  <div class="outline-card c">
+    <div class="supersummary">
+      <div class="supersummary-label">SUPER SUMMARY</div>
+      <p>ラグジュアリーフレグランスにおける地域差は「どんな香りが好まれるか」だけでなく「どんな文化的物語・価値観に共鳴するか」の問題でもある。資生堂のフランス"インサイダー戦略"・L'OréalのLuxe部門地域別パフォーマンス・Estée LauderのLe Labo日本1位獲得を事例に、地域文化への適応と事業成果の関係を考察する。</p>
+    </div>
+    <div class="sections-wrap">
+      <div class="sections-label">POSTER SECTIONS</div>
+      <div class="section-row">
+        <span class="section-num num-c">1</span>
+        <div class="section-content">
+          <div class="section-title">背景・問い</div>
+          <div class="section-desc">同じ香水ブランドが地域で明暗を分ける。売上の差は「香りの好み」の違いか、「文化的文脈への適合」の違いか。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-c">2</span>
+        <div class="section-content">
+          <div class="section-title">分析対象と方法</div>
+          <div class="section-desc">資生堂・L'Oréal Luxe・LVMH・Estée Lauderの公開情報（アニュアルレポート・ケース教材）をケーススタディとして比較分析。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-c">3</span>
+        <div class="section-content">
+          <div class="section-title">地域別市場パフォーマンスの差</div>
+          <div class="section-desc">L'Oréal Luxeのフレグランス+14%成長・北米初の1位獲得 vs 北東アジアの軟調。Estée LauderのLe Labo日本1位・中国成長。地域差が売上に直結することを数字で示す。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-c">4</span>
+        <div class="section-content">
+          <div class="section-title">地域適応戦略の類型化</div>
+          <div class="section-desc">①R&D委譲型：資生堂がフランス子会社に開発を完全委譲しインサイダー化。②ポートフォリオ型：L'OréalがLe Labo・Aēsop等を地域の文化的嗜好に合わせて配置。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-c">5</span>
+        <div class="section-content">
+          <div class="section-title">メリット</div>
+          <div class="section-desc">文化的文脈への適応が消費者の「共感」を生み、プレミアム価格帯での差別化を可能にする。ニッチブランドが地域で1位を取れる構造。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-c">6</span>
+        <div class="section-content">
+          <div class="section-title">リスク</div>
+          <div class="section-desc">ブランドの世界観・統一感の棄損。高級感を保ちながらローカル化するジレンマ。地域特化が進みすぎると他地域での展開が困難になるリスク。</div>
+        </div>
+      </div>
+      <div class="section-row">
+        <span class="section-num num-c">7</span>
+        <div class="section-content">
+          <div class="section-title">結論</div>
+          <div class="section-desc">ラグジュアリーフレグランスの地域差は「香りの好み」より「ブランドと文化の接続」に規定される。適応の巧拙が事業成果に直結する。</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer"><strong>強み：</strong>ビジネス戦略の文脈で語れるため考察が書きやすい。ただし「香り嗜好の差」より「売上の差」が主軸になりがち。</div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="compare-section">
+    <h2>📊 3案の比較</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="th-a">案A｜香料原料メーカー</th>
+          <th class="th-b">案B｜日用品メーカー</th>
+          <th class="th-c">案C｜フレグランス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-head">テーマとの直結度</td>
+          <td>嗜好差そのものを扱う</td>
+          <td>嗜好差→戦略の連動が明確</td>
+          <td>売上差が主で嗜好差は間接的</td>
+        </tr>
+        <tr>
+          <td class="row-head">使えるデータ量</td>
+          <td><span class="stars">★★★</span> 複数社の一次資料</td>
+          <td><span class="stars">★★☆</span> Henkel中心</td>
+          <td><span class="stars">★★☆</span> 売上データ中心</td>
+        </tr>
+        <tr>
+          <td class="row-head">ポスターの新規性感</td>
+          <td>やや薄い（既存データ整理）</td>
+          <td>Henkelの比較が映える</td>
+          <td>ケース対比が視覚的にわかりやすい</td>
+        </tr>
+        <tr>
+          <td class="row-head">追加調査の難易度</td>
+          <td><span class="stars">★☆☆</span> 文献中心で完結</td>
+          <td><span class="stars">★★☆</span> Henkel以外は薄い</td>
+          <td><span class="stars">★★☆</span> 追加資料が欲しくなりやすい</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="recommendation">
+      <h3>現時点の推奨：案Aベース＋案Bの事例を組み込む</h3>
+      <p>案Aの「業界横断データによる地域別嗜好差の整理」を骨格とし、案BのHenkel事例を「企業が実際にどう対応しているか」の具体例として組み込む構成が最も手堅い。テーマが求める「事実・要因・メリット・リスク」を全て押さえられ、文献調査として完結するため追加リサーチのリスクも低い。</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  PBL 13班｜浅田紘斗 担当分｜2026-05-31
+</footer>
+
+</body>
+</html>
